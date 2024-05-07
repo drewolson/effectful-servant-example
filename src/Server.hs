@@ -18,6 +18,7 @@ import Servant
     ServerError,
   )
 import Servant qualified as S
+import Servant.Conduit ()
 import System.IO
 
 toHandler :: IO (Either (CallStack, ServerError) a) -> Handler a

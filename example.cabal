@@ -30,6 +30,7 @@ library
       Data.Config
       Data.Item
       Handler.Item
+      Handler.Stream
       Server
   other-modules:
       Paths_example
@@ -43,9 +44,11 @@ library
   build-depends:
       aeson
     , base >=4.7 && <5
+    , conduit
     , effectful
     , effectful-th
     , mtl
+    , servant-conduit
     , servant-server
     , warp
   default-language: GHC2021
@@ -64,10 +67,12 @@ executable example-exe
   build-depends:
       aeson
     , base >=4.7 && <5
+    , conduit
     , effectful
     , effectful-th
     , example
     , mtl
+    , servant-conduit
     , servant-server
     , warp
   default-language: GHC2021
@@ -87,10 +92,12 @@ test-suite example-test
   build-depends:
       aeson
     , base >=4.7 && <5
+    , conduit
     , effectful
     , effectful-th
     , example
     , mtl
+    , servant-conduit
     , servant-server
     , warp
   default-language: GHC2021
