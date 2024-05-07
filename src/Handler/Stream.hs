@@ -5,6 +5,7 @@ where
 
 import Conduit (ConduitT, (.|))
 import Conduit qualified as C
+import Control.Concurrent (threadDelay)
 import Data.Config (Config (..))
 import Data.Item (Item (..))
 import Effectful (Eff, (:>))
@@ -17,4 +18,5 @@ stream = do
     C.yieldMany [1 ..]
       .| C.takeC 10
       .| C.mapC (* 2)
+      .| C.iterMC (const $ threadDelay 100000)
       .| C.mapC (\i -> Item i name)
