@@ -28,5 +28,5 @@ stream = do
       C.yieldMany [1 ..]
         .| C.takeC 10
         .| C.mapC (* 2)
-        .| C.iterMC (const $ runIO $ pause)
-        .| C.mapMC (runIO . mkItem)
+        .| C.iterMC (\_ -> runIO pause)
+        .| C.mapMC (\i -> runIO $ mkItem i)
