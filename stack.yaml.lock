@@ -3,11 +3,32 @@
 # For more information, please see the documentation at:
 #   https://docs.haskellstack.org/en/stable/lock_files
 
-packages: []
+packages:
+- completed:
+    hackage: effectful-2.5.1.0@sha256:bc202099c724feeac0cc083a719aab2d2ba91a1eb18e9150c560054008a93e12,7440
+    pantry-tree:
+      sha256: 3ab0c92d57e93247ed96ae41652910f14cad45ff1082f6d1f7566d70ca97fc88
+      size: 3409
+  original:
+    hackage: effectful-2.5.1.0
+- completed:
+    hackage: effectful-core-2.5.1.0@sha256:252d6c7641d8ecf16d7d228ad2aced011b92f36e175acdf6ccac528e576cf7cb,4211
+    pantry-tree:
+      sha256: b9e1311d58a351a92425a405ca7483addfdb6e5a5e3f5a707f50e32b7a577623
+      size: 2474
+  original:
+    hackage: effectful-core-2.5.1.0
+- completed:
+    hackage: strict-mutable-base-1.1.0.0@sha256:b1c039f6b179aedb420a90cbe15d3c3e78fbaaa7146ed02700b84c6018ee734f,1430
+    pantry-tree:
+      sha256: 72f03d9f5f5ad68f71e3405f8060b7a1b0875cd3f6a73ac52b8b2f091ae984d2
+      size: 439
+  original:
+    hackage: strict-mutable-base-1.1.0.0
 snapshots:
 - completed:
-    sha256: 4a0e5e187fbef423f9c60072bfb1dd56f2a01a07a2667eb1469bd79073cfceaf
-    size: 713340
-    url: https://raw.githubusercontent.com/commercialhaskell/stackage-snapshots/master/lts/22/20.yaml
+    sha256: 08bd13ce621b41a8f5e51456b38d5b46d7783ce114a50ab604d6bbab0d002146
+    size: 720271
+    url: https://raw.githubusercontent.com/commercialhaskell/stackage-snapshots/master/lts/22/43.yaml
   original:
-    url: https://raw.githubusercontent.com/commercialhaskell/stackage-snapshots/master/lts/22/20.yaml
+    url: https://raw.githubusercontent.com/commercialhaskell/stackage-snapshots/master/lts/22/43.yaml
