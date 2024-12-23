@@ -5,6 +5,7 @@ where
 
 import Api (Api)
 import Api qualified
+import App (App)
 import App qualified
 import Control.Monad.Except (ExceptT (..))
 import Data.Bifunctor (Bifunctor (first))
@@ -16,6 +17,7 @@ import Servant
     Handler (..),
     Proxy (..),
     ServerError,
+    ServerT,
   )
 import Servant qualified as S
 import Servant.Conduit ()
@@ -24,10 +26,13 @@ import System.IO
 toHandler :: IO (Either (CallStack, ServerError) a) -> Handler a
 toHandler = Handler . ExceptT . fmap (first snd)
 
+server :: ServerT Api App
+server = Api.server
+
 mkApp :: Config -> Application
 mkApp config =
   S.serve (Proxy @Api) $
-    S.hoistServer (Proxy @Api) (toHandler . App.runApp config) Api.server
+    S.hoistServer (Proxy @Api) (toHandler . App.runApp config) server
 
 run :: IO ()
 run = do
